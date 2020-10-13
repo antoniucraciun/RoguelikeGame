@@ -58,20 +58,21 @@ public class Stats : MonoBehaviour
     float timer = 2f;
     private void Update()
     {
-        //timer -= Time.deltaTime;
-        //if (timer < 0)
-        //{
-        //    TestTakeDamage();
-        //    TestUseMana();
-        //    TestExperience();
-        //    timer = 2f;
-        //}
+        return;
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            TestTakeDamage();
+            TestUseMana();
+            TestExperience();
+            timer = 2f;
+        }
         
     }
 
     void TestTakeDamage()
     {
-        TakeDamage(StatType.Physic, 20);
+        TakeDamage(StatType.True, 20);
     }
 
     void TestUseMana()

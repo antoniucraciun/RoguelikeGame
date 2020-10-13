@@ -20,12 +20,16 @@ public class PlayerUIController : MonoBehaviour
 
     void Start()
     {
-        healthBar = GameObject.Find("HealthBar").GetComponent<Image>();
-        manaBar = GameObject.Find("ManaBar").GetComponent<Image>();
-        armorText = GameObject.Find("ArmorText").GetComponent<TMP_Text>();
-        magicResistText = GameObject.Find("MagicResistText").GetComponent<TMP_Text>();
-        experienceBar = GameObject.Find("ExperienceBar").GetComponent<Image>();
-
+        healthBar = GameObject.FindGameObjectWithTag("Health").GetComponent<Image>();
+        manaBar = GameObject.FindGameObjectWithTag("Mana").GetComponent<Image>();
+        armorText = GameObject.FindGameObjectWithTag("Armor").GetComponent<TMP_Text>();
+        magicResistText = GameObject.FindGameObjectWithTag("MagicResist").GetComponent<TMP_Text>();
+        experienceBar = GameObject.FindGameObjectWithTag("Experience").GetComponent<Image>();
+        //healthBar = GameObject.Find("HealthBar").GetComponent<Image>();
+        //manaBar = GameObject.Find("ManaBar").GetComponent<Image>();
+        //armorText = GameObject.Find("ArmorText").GetComponent<TMP_Text>();
+        //magicResistText = GameObject.Find("MagicResistText").GetComponent<TMP_Text>();
+        //experienceBar = GameObject.Find("ExperienceBar").GetComponent<Image>();
         stats = GetComponent<Stats>();
         stats.onHealthChanged.AddListener(UpdateHealth);
         stats.onManaChanged.AddListener(UpdateMana);
